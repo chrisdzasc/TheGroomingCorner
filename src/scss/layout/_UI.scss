@@ -1,0 +1,72 @@
+@use 'base/variables' as v; // Importando variables desde el archivo 'variables' en el directorio 'base'.
+@use 'base/mixins' as m; // Importando mixins desde el archivo 'variables' en el directorio 'base'.
+
+// Definiendo un bloque de estilos para la clase .contenedor-app
+.contenedor-app{
+    @include m.tablet{ // Media Query para Tablet
+        display: grid; // Crea filas y columnas
+        grid-template-columns: repeat(2, 1fr); // Creando dos columnas de igual de ancho
+        min-height: 100vh; // Estableciendo la altura minima del contenedor al 100% de la altura de la ventana
+    }
+
+    .imagen{ // Estilos para la clase de .imagen dentro de la clase .contenedor-app
+        height: 20rem; // Estableciendo la altura de 200 pixeles
+        background-image: url(../img/1.jpg); // Estableciendo la imagen de fondo 
+        background-size: cover; // Escalando la imagen de fondo para curbir completamente el elemento
+        background-position: center center; // Centrando la imagen de fondo horizontal y verticalmente
+        @include m.tablet{ // Media Query para Tablet
+            height: auto; // Estableciendo la altura automatica
+        }
+    }
+
+    .app{
+        width: 95%; // 95% de lo que tiene definido
+        margin: 0 auto; // Centrando el elemento horizontalmente dentro del contenedor
+        padding: 3rem 0; // Estableciendo relleno superior e inferior de 30 pixeles y relleno izquierda derecha de 0
+        @include m.tablet {
+            overflow: scroll;
+            overflow-x: hidden;
+            margin-right: 0;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+     
+            &::-webkit-scrollbar {
+                width: 0.9rem;
+            }
+     
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(255,255,255, .4);
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.barra{
+
+    margin: 5rem 0;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton{
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.barra-servicios{
+    margin-bottom: 5rem;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton{
+        margin: 0 0 1rem 0;
+    }
+}

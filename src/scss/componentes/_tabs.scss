@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tabs{
+
+    @include m.tablet{
+        display: flex; // Se colocan los botones de izquierda a derecha
+    }
+
+    button{
+        background-color: v.$azul; // Color de fondo
+        border: none; // Eliminar el borde
+        color: v.$blanco; // Color del texto
+        padding: 1rem; // Relleno de 10 pixeles en todas las direcciones
+        display: block; // Se coloquen uno debajo del otro.
+        width: 100%; // Tome todo el ancho disponible
+        margin-bottom: 1rem; // Agregar margen inferior de 10 pixeles.
+        text-transform: uppercase; // Convertir el texto en mayúsculas.
+        font-weight: v.$bold; // Convertir el texto en negritas.
+        transition: background-color 300ms ease; // Efecto
+
+        &:hover{
+            cursor: pointer;
+            background-color: darken(v.$azul, 20%);
+        }
+
+        &.actual{
+            background-color: v.$blanco;
+            color: v.$azul;
+        }
+    }
+}

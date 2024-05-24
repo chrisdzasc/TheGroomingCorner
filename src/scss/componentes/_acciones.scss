@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.acciones{
+    margin-top: 5rem; // Separacion en la parte superior de 50 pixeles
+    @include m.tablet{
+        display: flex; // Los va a colocar de izquierda a derecha
+        justify-content: space-between; // Agrega separacion en el medio
+        align-items: center;
+    }
+
+    a{
+        color: v.$blanco;
+        display: block; // Va a forzar el salto de linea, acomoda el contenido como en bloques
+        margin-bottom: 3rem; // Agrega margen inferior de cada enlace de 30 pixeles
+        text-align: center; // Los coloca al centro horizontalmente
+    }
+
+
+}

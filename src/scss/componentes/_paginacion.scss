@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.paginacion{
+    padding: 5rem 0; // Añadir relleno de 50 pixles arriba y abajo y 0 izquierda y derecha
+
+    @include m.telefono{
+        display: flex; // Se van a colocar los 2 en la misma linea.
+        justify-content: space-between; // Va a crear un espacio en el medio de los dos botones
+    }
+
+    button{
+        margin: 0 0 1rem 0; // 10 pixeles de margen inferior.
+    }
+}
+
+.ocultar{
+    visibility: hidden;
+}

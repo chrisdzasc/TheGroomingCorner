@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario{
+    margin-top: 5rem; // Margen superior de 50 pixeles
+    width: 100%; // Va a tomar todo el ancho disponible
+}
+
+.campo{
+    display: flex; // Los elementos de van a comportar como elementos flexibles
+    margin-bottom: 2rem; // Separacion de 20 pixeles entre cada uno de los campos
+    align-items: center; // Para que esté centrado horizontalmente
+
+    label{
+        flex: 0 0 10rem; // Los lables van a medir 100 pixeles
+    }
+
+    input{
+        flex: 1; // Va a hacer que tome el resto del tamaño
+        border: none; // Le quitamos todo el borde
+        padding: 1.25rem; // 12.5 pixeles de relleno
+        border-radius: 1rem; // Esquinas redondeadas de 10 pixeles
+
+        &:disabled{
+            background-color: lighten(v.$negro, 30%);
+            color: v.$blanco;
+            cursor: not-allowed;
+        }
+    }
+}

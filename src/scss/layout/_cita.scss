@@ -1,0 +1,16 @@
+.seccion{
+    padding: 5rem 0;
+    display: none; // Oculta las secciones.
+
+    .text-center{
+        text-align: center; // Alinea horizontalmente al centro
+    }
+}
+
+.mostrar{
+    display: block;
+}
+
+.ocultar{
+    display: none;
+}

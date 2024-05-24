@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+
+.alerta{
+    padding: 1.25rem; // Relleno de 25 pixeles.
+    color: v.$blanco; // El color del texto es blanco.
+    width: 100%; // Toma el 100% del espacio en lo ancho.
+    display: block; // Garantiza que las alertas se muestren una arriba de la otra.
+    margin-bottom: 2rem; // Le agrega un margen de 20 pixeles en la parte inferior.
+    text-align: center; // Alinea el texto en el centro horizontalmente.
+    font-weight: v.$bold; // Lo hace negritas.
+    text-transform: uppercase; // Convierte el texto en mayúsculas.
+
+    &.error{ // Cuando esté presente la clase de "error".
+        background-color: v.$rojo; // Coloca un fondo de color rojo.
+    }
+
+    &.exito{ // Cuando esté presente la clase de "exito".
+        background-color: v.$verde; //Coloca un fondo de color verde.
+    }
+}
